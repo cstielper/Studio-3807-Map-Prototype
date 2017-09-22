@@ -59,25 +59,30 @@ document.addEventListener('DOMContentLoaded', function() {
 // Fetch all of the data we will use
 function fetchData() {
 	document.getElementById(myMap).innerHTML = 'Loading map...';
-	fetch(markersFeed)
-		.then(response => response.json())
-		.then(function(data) {
+
+	const xhrMarkers = new XMLHttpRequest();
+	xhrMarkers.onreadystatechange = function(){
+		if (xhrMarkers.readyState === 4 && xhrMarkers.status === 200) {
+			const data = JSON.parse(xhrMarkers.responseText);
 			landmarksObj = data;
 			convertLandmarkData(landmarksObj);
-		})
-		.catch(function(err) {
-			document.getElementById(myMap).innerHTML = `Error loading data: ${err}`;
-		});
+		}
+	};
+
+	xhrMarkers.open('GET', markersFeed, true);
+	xhrMarkers.send();
 	
-	fetch(catsFeed)
-		.then(response => response.json())
-		.then(function(data) {
+	const xhrCats = new XMLHttpRequest();
+	xhrCats.onreadystatechange = function(){
+		if (xhrCats.readyState === 4 && xhrCats.status === 200) {
+			const data = JSON.parse(xhrCats.responseText);
 			catsObj = data;
 			buildCats(catsObj);
-		})
-		.catch(function(err) {
-			document.getElementById(myMap).innerHTML = `Error loading data: ${err}`;
-		});
+		}
+	};
+
+	xhrCats.open('GET', catsFeed, true);
+	xhrCats.send();
 }
 
 // Create an array of nested arrays with the pieces of data we will need
