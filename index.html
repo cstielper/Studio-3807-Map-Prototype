@@ -1,24 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>Document</title>
 	<style>
-		html, body, div, span, applet, object, iframe,
-		h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-		a, abbr, acronym, address, big, cite, code,
-		del, dfn, em, img, ins, kbd, q, s, samp,
-		small, strike, strong, sub, sup, tt, var,
-		b, u, i, center,
-		dl, dt, dd, ol, ul, li,
-		fieldset, form, label, legend,
-		table, caption, tbody, tfoot, thead, tr, th, td,
-		article, aside, canvas, details, embed, 
-		figure, figcaption, footer, header, hgroup, 
-		menu, nav, output, ruby, section, summary,
-		time, mark, audio, video {
+		html,
+		body,
+		div,
+		span,
+		applet,
+		object,
+		iframe,
+		h1,
+		h2,
+		h3,
+		h4,
+		h5,
+		h6,
+		p,
+		blockquote,
+		pre,
+		a,
+		abbr,
+		acronym,
+		address,
+		big,
+		cite,
+		code,
+		del,
+		dfn,
+		em,
+		img,
+		ins,
+		kbd,
+		q,
+		s,
+		samp,
+		small,
+		strike,
+		strong,
+		sub,
+		sup,
+		tt,
+		var,
+		b,
+		u,
+		i,
+		center,
+		dl,
+		dt,
+		dd,
+		ol,
+		ul,
+		li,
+		fieldset,
+		form,
+		label,
+		legend,
+		table,
+		caption,
+		tbody,
+		tfoot,
+		thead,
+		tr,
+		th,
+		td,
+		article,
+		aside,
+		canvas,
+		details,
+		embed,
+		figure,
+		figcaption,
+		footer,
+		header,
+		hgroup,
+		menu,
+		nav,
+		output,
+		ruby,
+		section,
+		summary,
+		time,
+		mark,
+		audio,
+		video {
 			margin: 0;
 			padding: 0;
 			border: 0;
@@ -26,25 +95,45 @@
 			font: inherit;
 			vertical-align: baseline;
 		}
+
 		/* HTML5 display-role reset for older browsers */
-		article, aside, details, figcaption, figure, 
-		footer, header, hgroup, menu, nav, section {
+
+		article,
+		aside,
+		details,
+		figcaption,
+		figure,
+		footer,
+		header,
+		hgroup,
+		menu,
+		nav,
+		section {
 			display: block;
 		}
+
 		body {
 			line-height: 1;
 		}
-		ol, ul {
+
+		ol,
+		ul {
 			list-style: none;
 		}
-		blockquote, q {
+
+		blockquote,
+		q {
 			quotes: none;
 		}
-		blockquote:before, blockquote:after,
-		q:before, q:after {
+
+		blockquote:before,
+		blockquote:after,
+		q:before,
+		q:after {
 			content: '';
 			content: none;
 		}
+
 		table {
 			border-collapse: collapse;
 			border-spacing: 0;
@@ -56,7 +145,8 @@
 			box-sizing: border-box;
 		}
 
-		html, body {
+		html,
+		body {
 			height: 100%;
 		}
 
@@ -74,7 +164,8 @@
 			flex-wrap: wrap;
 		}
 
-		#map-canvas, #landmark-listing {
+		#map-canvas,
+		#landmark-listing {
 			height: 90%;
 		}
 
@@ -86,6 +177,7 @@
 
 		#landmark-listing {
 			width: 25%;
+			overflow-y: scroll;
 		}
 
 		#landmark-listing li {
@@ -99,7 +191,7 @@
 			background-color: #DEDEDE;
 			cursor: pointer;
 		}
-		
+
 		#landmark-listing li.active {
 			display: block;
 		}
@@ -115,10 +207,12 @@
 		#map-nav ul {
 			height: 100%;
 			display: flex;
+			flex-wrap: wrap;
 		}
 
 		#map-nav li {
 			height: 100%;
+			flex: 1 0 auto;
 		}
 
 		#map-nav a {
@@ -136,7 +230,8 @@
 			opacity: 0.8;
 		}
 
-		#map-nav a.active, #map-nav a.active:hover {
+		#map-nav a.active,
+		#map-nav a.active:hover {
 			opacity: 1;
 		}
 
@@ -156,6 +251,7 @@
 		}
 	</style>
 </head>
+
 <body>
 	<div id="map-wrap">
 		<div id="landmark-listing"></div>
@@ -164,4 +260,5 @@
 	<button id="reset">Reset Map</button>
 	<script src="scripts.js"></script>
 </body>
+
 </html>

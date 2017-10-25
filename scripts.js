@@ -20,7 +20,7 @@ const apiKey = 'AIzaSyDQShvmZn5OfDXv8eoOi--sdXsCsCHXaeQ';
 
 // Paths to JSON data
 const markersFeed =
-	'https://www.4000massaveapts.net/dev/wp-json/wp/v2/area_landmarks?per_page=10';
+	'https://www.4000massaveapts.net/dev/wp-json/wp/v2/area_landmarks?per_page=100';
 const catsFeed =
 	'https://www.4000massaveapts.net/dev/wp-json/wp/v2/landmark_types';
 
@@ -197,9 +197,9 @@ function buildMap(data, location) {
 			position: new google.maps.LatLng(data[i][2], data[i][3]),
 			map: map,
 			//icon: image,
-			html: `<strong class="heading">${data[i][1]}</strong>${data[
+			html: `<strong class="heading">${data[i][1]}</strong>${data[i][4]}${data[
 				i
-			][4]}${data[i][5]}${data[i][6]}${data[i][7]}${data[i][8]}`
+			][5]}${data[i][6]}${data[i][7]}${data[i][8]}`
 		});
 		markers.push(marker);
 		bounds.extend(marker.getPosition());
